@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function cargarFiltros() {
-  const resPaises = await fetch('${API_BASE}/pais');
+  const resPaises = await fetch(`${API_BASE}/pais`);
   const datos = await resPaises.json();
 
   const paisSelect = document.getElementById('filtro-pais');
