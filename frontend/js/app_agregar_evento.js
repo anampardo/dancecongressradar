@@ -1,4 +1,5 @@
 //init
+const API_BASE = 'https://dancecongressradar.vercel.app/';
 console.log('init');
 verificarSesion();
 
@@ -7,7 +8,7 @@ async function cargarDatos() {
   const paisSelect = document.getElementById('pais');
   const ciudadSelect = document.getElementById('ciudad');
 
-  const res = await fetch('http://localhost:3000/pais');
+  const res = await fetch('${API_BASE}/pais');
   const datos = await res.json();
 
   // Agrupar ciudades por país
@@ -44,7 +45,7 @@ async function cargarDatos() {
 //Cargar estilos del evento
 async function cargarEstilos() {
    // Estilos
-  const resEstilos = await fetch('http://localhost:3000/estilos');
+  const resEstilos = await fetch('${API_BASE}/estilos');
   const estilos = await resEstilos.json();
   const estiloContainer = document.getElementById('estilos-container');
    estilos.forEach(estilo => {
@@ -66,7 +67,7 @@ async function verificarSesion() {
   console.log('Llamado a verificar session');
 
   try {
-    const res = await fetch('http://localhost:3000/verificar', {
+    const res = await fetch('${API_BASE}/verificar', {
       credentials: 'include' // 👈 esto es CLAVE para mantener la sesión
     });
 
@@ -100,7 +101,7 @@ document.getElementById('form-evento').addEventListener('submit', async (e) => {
   };
 
   try {
-    const res = await fetch('http://localhost:3000/eventos', {
+    const res = await fetch('${API_BASE}/eventos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -124,57 +125,6 @@ document.getElementById('form-evento').addEventListener('submit', async (e) => {
 
 
 
-/*
-function requiereLogin(req, res, next) {
-  if (!req.session.usuarioId) {
-    return res.status(401).json({ error: 'No autorizado' });
-  }
-  next();
-}
-
-// Guardar el formulario
-app.post('/eventos', requiereLogin, async (req, res) => {
-
-  const checkboxes = document.querySelectorAll('input[name="estilo"]:checked');
-  const estilosSeleccionados = Array.from(checkboxes).map(cb => parseInt(cb.value));
-
-  const datos = {
-    pais: document.getElementById('pais').value,
-    ciudad: document.getElementById('ciudad').value,
-    nombre: document.getElementById('nombre').value,
-    fecha_inicio: document.getElementById('fecha_inicio').value,
-    fecha_fin: document.getElementById('fecha_fin').value,
-    web: document.getElementById('web').value,
-    estilos: estilosSeleccionados
-  };
-
-  console.log('Evento a guardar:', datos);
-  // Aquí luego enviaremos a backend con fetch (POST)
-
-   try {
-    const res = await fetch('http://localhost:3000/eventos', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(datos)
-    });
-
-    const resultado = await res.json();
-    if (res.ok) {
-      if (res.ok) {
-        alert('Evento guardado correctamente');
-        mostrarEventos(); // 👈 refresca la lista
-    }
-    } else {
-      alert('Error: ' + resultado.error);
-    }
-  } catch (err) {
-    alert('Error en la conexión con el servidor');
-    console.error(err);
-  }
-
-});
-
-*/ 
 
 
 

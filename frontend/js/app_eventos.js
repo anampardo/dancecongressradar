@@ -1,3 +1,5 @@
+const API_BASE = 'https://dancecongressradar.vercel.app/';
+
 async function mostrarEventos(eventos = {}) {
   const contenedor = document.getElementById('eventos-lista');
   contenedor.innerHTML = '';
@@ -33,7 +35,7 @@ async function mostrarEventos(eventos = {}) {
 async function cargarEventos(filtros = {}) {
   console.log('cargarEventos');
   const params = new URLSearchParams(filtros).toString();
-  const url = `http://localhost:3000/eventos${params ? '?' + params : ''}`;
+  const url = `${API_BASE}/eventos${params ? '?' + params : ''}`;
   const res = await fetch(url);
   const eventos = await res.json();
   return eventos;
@@ -59,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function cargarFiltros() {
-  const resPaises = await fetch('http://localhost:3000/pais');
+  const resPaises = await fetch('${API_BASE}/pais');
   const datos = await resPaises.json();
 
   const paisSelect = document.getElementById('filtro-pais');
@@ -88,7 +90,7 @@ async function cargarFiltros() {
   paisSelect.dispatchEvent(new Event('change')); // Inicializar
 
   // Estilos
-  const resEstilos = await fetch('http://localhost:3000/estilos');
+  const resEstilos = await fetch('${API_BASE}/estilos');
   const estilos = await resEstilos.json();
   const estiloSelect = document.getElementById('filtro-estilo');
   estilos.forEach(estilo => {
