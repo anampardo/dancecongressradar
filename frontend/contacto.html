@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>DanceCongressRadar - Eventos</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+  <div id="wrapper">
+      <header id="header"></header>
+      <nav id="menu">
+        <h2>Menu</h2>
+            <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="eventos.html">Eventos</a></li>
+            <li><a href="contacto.html">Agregar evento</a></li>
+      <!-- <li><a href="agregar_evento.html">Agregar evento</a></li> -->
+            </ul>
+      </nav>
+
+    <div id="main">
+      <div class="inner">
+
+
+        <h2>Formulario de Contacto para Organizadores</h2>
+        <p>Si eres organizador de un evento y deseas que aparezca en nuestro listado, por favor completa el siguiente formulario con toda la información solicitada.
+        <br/>Una vez enviado, tu solicitud pasará por un proceso de validación por parte de nuestro equipo.
+        <br/><br/>
+        Nos aseguramos de que todos los eventos publicados cumplan con nuestros estándares de calidad y veracidad.
+        <br/>Recibirás un correo electrónico con la confirmación una vez que tu evento haya sido revisado y aprobado.</p>
+
+        <form action="https://formsubmit.co/ed47058360d38435bff09362f858767b" method="POST">
+        <label for="nombre_evento">Nombre del evento:</label>
+        <input type="text" id="nombre_evento" name="nombre_evento" required>
+
+        <label for="fecha_inicio">Fecha de inicio:</label>
+        <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+
+        <label for="fecha_fin">Fecha de fin:</label>
+        <input type="date" id="fecha_fin" name="fecha_fin" required>
+
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required></select>
+        
+        <label for="ciudad">Ciudad:</label>
+        <select id="ciudad" name="ciudad" required></select>
+
+        <label>Estilos del evento:</label>
+        <div id="estilos-container"></div>
+
+        <label for="email_organizador">Correo de contacto del organizador:</label>
+        <input type="email" id="email_organizador" name="email_organizador" required>
+
+        <label for="web">Página web del evento:</label>
+        <input type="url" id="web" name="web" placeholder="http://">
+
+        <!-- Opcional: agregar un mensaje personalizado -->
+        <input type="hidden" name="_subject" value="Nuevo evento enviado desde DanceCongressRadar">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+            <br/><br/>
+        <button type="submit">Enviar</button>
+        </form>
+    </div>
+  </div>
+  <footer id="footer"></footer>
+</div>
+
+ <!-- Scripts -->
+ 
+  <script src="js/include.js"></script>
+  <script src="js/app_contacto.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

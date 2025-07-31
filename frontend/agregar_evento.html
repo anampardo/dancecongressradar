@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>DanceCongressRadar - Eventos</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+  <div id="wrapper">
+      <header id="header"></header>
+       <div id="main">
+            <div class="inner">
+                <h1>Agregar Evento</h1>
+                <nav>
+                  <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                  </ul>
+                </nav>
+
+                <form id="form-evento">
+                  <label for="pais">País:</label>
+                  <select id="pais" required></select>
+
+                  <label for="ciudad">Ciudad:</label>
+                  <select id="ciudad" required></select>
+
+                  <fieldset>
+                    <label for="estilos-container">Estilos</label>
+                    <div id="estilos-container"></div>
+                  </fieldset>
+
+                  <label for="nombre">Nombre del evento:</label>
+                  <input type="text" id="nombre" required />
+
+                  <label for="fecha_inicio">Fecha de inicio:</label>
+                  <input type="date" id="fecha_inicio" required />
+
+                  <label for="fecha_fin">Fecha de fin:</label>
+                  <input type="date" id="fecha_fin" required />
+
+                  <label for="web">Sitio web:</label>
+                  <input type="url" id="web" />
+
+                  <button type="submit">Guardar evento</button>
+                </form>
+            </div>
+        </div>
+  </div>    
+
+  <script src="js/app_agregar_evento.js"></script>
+</body>
+</html>

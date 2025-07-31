@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>DanceCongressRadar - Eventos</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+  <div id="wrapper">
+      <header id="header"></header>
+  
+  <!-- Menu -->
+	<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="eventos.html">Eventos</a></li>
+      <li><a href="contacto.html">Agregar evento</a></li>
+      <!-- <li><a href="agregar_evento.html">Agregar evento</a></li> -->
+    </ul>
+  </nav>
+  
+  	<div id="main">
+      <div class="inner">
+        
+        <header>
+          <h1>Eventos Registrados</h1>
+          <p>Estos son los eventos disponibles</p>
+        </header>
+
+        <div class="contenido-principal">
+          <!-- Panel lateral: filtros -->
+          <button id="toggle-filtros" class="filtro-toggle">
+            <img src="/images/filter.png" alt="Mostrar filtros" class="icono-filtro" />
+          </button>
+          <aside class="panel-filtros cerrado" id="panel-filtros">
+            <h3>Filtrar eventos</h3>
+            <form id="form-filtros">
+              <label for="pais">País:</label>
+              <select id="filtro-pais" name="pais"></select>
+
+              <label for="ciudad">Ciudad:</label>
+              <select id="filtro-ciudad" name="ciudad"></select>
+
+              <label for="estilo">Estilo:</label>
+              <select id="filtro-estilo" name="estilo">
+                <option value="">Todos</option>
+              </select>
+
+              <label for="fecha_inicio">Desde:</label>
+              <input type="date" id="filtro-desde" name="fecha_inicio">
+
+              <label for="fecha_fin">Hasta:</label>
+              <input type="date" id="filtro-hasta" name="fecha_fin">
+
+              <button type="submit">Aplicar filtros</button>
+            </form>
+          </aside>
+
+          <!-- Panel de resultados -->
+          <section class="tiles" id="eventos-lista">
+            <!-- Aquí se mostrarán los eventos -->
+          </section>
+        </div>
+      </div>
+
+      </div>
+ 
+      <footer id="footer"></footer>
+
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/include.js"></script>
+  <script src="js/app_eventos.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
